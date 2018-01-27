@@ -5,18 +5,22 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour {
 
     public bool isMoving = false;
-
     public GameObject goDetectUnwalkable;
     public Grid gGrid;
     public Node[,] naGrid;
-	public Vector3 v3TargetNode;
+	public Vector3 v3MovementDirection;
 	public float fMovementSpeed = 5.0f;
+
+	float fMovementDistance = 0.0f;
+	List<GameObject> lgoMovingBots;
+
 
 	// Use this for initialization
 	void Awake () 
     {
         goDetectUnwalkable = GameObject.FindGameObjectWithTag("Pathing");
         gGrid = goDetectUnwalkable.GetComponent<Grid>();
+		lgoMovingBots = new List<GameObject> ();
 	}
 
     // Use this to check the relevant grid the player wants to move to
@@ -34,18 +38,37 @@ public class Player_Movement : MonoBehaviour {
         // If no key is pressed, check if there is any movement
         // If no movement, can move by pressing key
         // Movement Controls
-		//if (!isMoving) 
-		//{
+		if (!isMoving) 
+		{
 			ProcessInputKeys ();
-		//} 
-		//else 
-		//{
-		//	transform.position = Vector3.MoveTowards (transform.position, v3TargetNode, fMovementSpeed * Time.deltaTime);
-		//	if (transform.position == v3TargetNode)
-		//	{
-		//		isMoving = false;
-		//	}
-		//}
+		} 
+		else 
+		{
+			float fMovementPerFrame = fMovementSpeed * Time.deltaTime;
+
+
+
+			if ( fMovementDistance + fMovementPerFrame > 1.0f) {
+				fMovementPerFrame =  1.0f - fMovementDistance;
+				fMovementDistance = 1.0f;
+			} 
+			else 
+			{
+				fMovementDistance += fMovementPerFrame;
+			}
+
+			foreach(var goBot in lgoMovingBots)
+			{
+				goBot.transform.position += fMovementPerFrame * v3MovementDirection;
+			}
+
+			if (fMovementDistance == 1.0f)
+			{
+				fMovementDistance = 0.0f;
+				isMoving = false;
+				lgoMovingBots.Clear ();
+			}
+		}
 	}
 
 	// Check all for direction movement keys and apply the corresponding movement.
@@ -69,14 +92,23 @@ public class Player_Movement : MonoBehaviour {
 					if ( gGrid.CheckGridSpace( goSortedBot.transform.position, av3MovementDirections[iLoop] ) == true )
 					{
 						goSortedBot.transform.Translate( av3MovementDirections[iLoop] );
+						lgoMovingBots.Add (goSortedBot);
 					}
 					/*else 
 					{
 						Debug.Log(goSortedBot.name + " cannot move there!");
 					}*/
-					//var currentPosition = transform.position;
-					//v3TargetNode = transform.position + av3MovementDirections[iLoop];
-					//isMoving = true;
+				}
+				if (lgoMovingBots.Count > 0)
+				{
+					v3MovementDirection = av3MovementDirections[iLoop];
+					// Very bad implementation
+					foreach(var goBot in lgoMovingBots)
+					{
+						goBot.transform.position -= v3MovementDirection;
+					}
+					isMoving = true;
+					//lgoMovingBots.Clear ();
 				}
 				//Break as we only want to be able to move 1 direction per update.
 				break;
@@ -93,10 +125,6 @@ public class Player_Movement : MonoBehaviour {
 			agoChildren.Add( child.gameObject );
 		}
 		return agoChildren;
-	}
-	
-	public void ExitReached(){
-
 	}
 
 	public void HoleReached(){

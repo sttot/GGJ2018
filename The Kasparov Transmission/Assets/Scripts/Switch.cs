@@ -6,6 +6,7 @@ public class Switch : MonoBehaviour
 {
 	public string sKey = "Default";
 	public List<Door> cConnectedDoors;
+	public bool bConstantSwitch = true;
 
 	// Use this for initialization
 	void Start () 
@@ -41,12 +42,16 @@ public class Switch : MonoBehaviour
 
 	void OnTriggerExit(Collider col)
 	{
-		if (col.tag == "Player") 
+		if (!bConstantSwitch) 
 		{
-			foreach (var cConnectedDoor in cConnectedDoors) 
+			if (col.tag == "Player") 
 			{
-				cConnectedDoor.Close ();
+				foreach (var cConnectedDoor in cConnectedDoors) 
+				{
+					cConnectedDoor.Close ();
+				}
 			}
 		}
+
 	}
 }

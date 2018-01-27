@@ -19,7 +19,7 @@ public class ExitScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		//Debug.Log ("" + other.gameObject.tag.ToString());
 		if (other.gameObject.tag == "Player") {
-			other.gameObject.GetComponentInParent<Player_Movement> ().ExitReached ();
+			other.gameObject.SetActive (false);
 			NumberBotsReached++;
 		}
 	}
