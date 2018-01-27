@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Exit
   - Pathing
+  - Door
+  - Switch
   layers:
   - Default
   - TransparentFX
