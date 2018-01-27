@@ -23,68 +23,168 @@ public class LevelLoader : MonoBehaviour
 	Grid gGrid;
 	GameObject goBotsStorage;
 
-	// TODO: reading from file
-	// 10x10 grid
-	string[,] Level1 = new string[,]
+	List<string[,]> Levels = new List<string[,]>()
 	{
-		{"WL", "WL", "WL", "WL", "EX3", "EX3", "EX3", "WL", "WL", "WL", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "WL", "WL", "WL",  "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		// TODO: reading from file
+		// 10x10 grid
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "EX3", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL",  "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		// 10x10 grid
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "EX3", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL",  "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		},
+		new string[,]
+		{
+			{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
+			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
+		}
 	};
-	// 10x10 grid
-	string[,] Level2 = new string[,]
-	{
-		{"WL", "WL", "WL", "WL", "EX3", "EX3", "EX3", "WL", "WL", "WL", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ",  "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "WL", "WL", "WL",  "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
-	};
-
-	// 10x10 grid
-	string[,] Level3 = new string[,]
-	{
-		{"WL", "WL", "WL", "WL", "WL", "EX3", "EX3", "WL", "WL", "WL", "WL"},
-		{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "WL",  "WL",  "WL", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "EX3"},
-		{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
-		{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
-	};
-
+		
 	void Awake()
 	{
 		gGrid = GameObject.FindGameObjectWithTag ("Pathing").GetComponent<Grid>();
 		goBotsStorage = GameObject.Find ("Bots");
-		LoadLevel( 0 );
+
+		LoadLevel( (int) GameMaster.instance.activeScene - 1 );
 	}
 
-	public void LoadLevel( int iLevel )
+	public void LoadLevel( int iCurrentLevel )
 	{
-		string[,] CurrentLevel = Level2;
+		string[,] CurrentLevel = Levels[ iCurrentLevel ];
+
 		int iColCount = CurrentLevel.GetLength (0);
 		int iRowCount = CurrentLevel.GetLength (1);
-
-		gGrid.CreateGrid (iColCount, iRowCount);
+				gGrid.CreateGrid (iColCount, iRowCount);
 
 		for (int i = 0; i < iColCount; i++)
 		{
@@ -107,7 +207,7 @@ public class LevelLoader : MonoBehaviour
 				{
 					// Create an exit and set its size
 					case InputCode.Exit:
-					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
+						GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						goExit.GetComponent<ExitScript> ().SetBotsNeeded ( iExitAmount );
 						break;
 					// Create a wall

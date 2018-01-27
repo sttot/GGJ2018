@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33415837146824018}
   - component: {fileID: 65938173042969648}
   - component: {fileID: 23920027012827154}
-  - component: {fileID: 114629518271848992}
-  - component: {fileID: 114828806571329040}
+  - component: {fileID: 114408388655575324}
+  - component: {fileID: 114144072912878538}
   m_Layer: 9
   m_Name: Exit
   m_TagString: Exit
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114629518271848992
+--- !u!114 &114144072912878538
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,18 +105,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1093748463788522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a263b3e45aa64459ed96171e0eb9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114828806571329040
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1093748463788522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b9908984f99b554b9c64001896705b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e4cb5e8795768384e8f68568778fd771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IsHole: 0
+--- !u!114 &114408388655575324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093748463788522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f298e67667901f24bbab67f5ef0658e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
