@@ -1714,6 +1714,8 @@ MonoBehaviour:
   isMoving: 0
   goDetectUnwalkable: {fileID: 0}
   gGrid: {fileID: 0}
+  v3TargetNode: {x: 0, y: 0, z: 0}
+  fMovementSpeed: 5
 --- !u!114 &237376709
 MonoBehaviour:
   m_ObjectHideFlags: 0
