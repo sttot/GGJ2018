@@ -44,10 +44,13 @@ public class GameMaster : MonoBehaviour {
 	private void InstantiateSessionData() 
 	{
 		GameSessionData = new GameSessionInfo();
+		GameSessionData.Instantiate();
+		//LoadData();
 	}
 
 	void Awake() 
 	{
+		InstantiateSessionData();
 		activeScene = ActiveScene.MainMenu;
 		instance = this;
 	}
@@ -63,7 +66,8 @@ public class GameMaster : MonoBehaviour {
 		FileStream file = File.Create(Application.persistentDataPath + "/playerHighscores.dat");
 		PlayerData data = new PlayerData();
 		
-		//TODO: Set elements of PlayerData to be saved to file from GameSessionInfo.
+		//Set PlayerData to be saved to file from GameSessionInfo.
+		data.LastSavedSession = GameSessionData;
 
 		bf.Serialize(file, data);
 		file.Close();
@@ -78,20 +82,29 @@ public class GameMaster : MonoBehaviour {
 			PlayerData data = (PlayerData) bf.Deserialize(file);
 			file.Close();
 
-			//TODO: Get data from PlayerData and store it.
+			//Get data from PlayerData and store it.
+			GameSessionData = data.LastSavedSession;
 		}
 	}
 }
 
 //Simple data holding class for menu population and highscore tracking.
-public class GameSessionInfo 
+public struct GameSessionInfo 
 {
-	//TODO: Add data contents
+	public bool[] LevelsComplete;
+	public int[] LevelScores;
+
+	public void Instantiate() 
+	{
+		LevelsComplete = new bool[10];
+		LevelScores = new int[10];
+	}
 }
 
 //Savedata format class.
 [Serializable]
-class PlayerData 
+struct PlayerData 
 {
 	//Add what data to be saved / loaded by filesystem here.
+	public GameSessionInfo LastSavedSession;
 }

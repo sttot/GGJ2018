@@ -29,20 +29,7 @@ public class SceneLoader : MonoBehaviour
 	private IEnumerator LoadNewScene() 
 	{
 		Loading = true;
-		string sceneName = "";
-		switch(GameMaster.instance.activeScene) 
-		{
-			case GameMaster.ActiveScene.MainMenu:
-				sceneName = "MainMenu";
-				break;
-			case GameMaster.ActiveScene.LevelSelect:
-				sceneName = "LevelSelect";
-				break;
-			default:
-				//Numbered level
-				sceneName = string.Concat("GameLevel_", GameMaster.instance.activeScene);
-				break;
-		}
+		string sceneName = GameMaster.instance.activeScene.ToString();
 
 		AsyncOperation ao = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
 		if( ao != null ) 
