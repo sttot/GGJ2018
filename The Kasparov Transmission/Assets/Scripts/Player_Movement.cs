@@ -9,6 +9,8 @@ public class Player_Movement : MonoBehaviour {
     public GameObject goDetectUnwalkable;
     public Grid gGrid;
     public Node[,] naGrid;
+	public Vector3 v3TargetNode;
+	public float fMovementSpeed = 5.0f;
 
 	// Use this for initialization
 	void Awake () 
@@ -31,13 +33,19 @@ public class Player_Movement : MonoBehaviour {
     {
         // If no key is pressed, check if there is any movement
         // If no movement, can move by pressing key
-        isMoving = false;
-
         // Movement Controls
-        if (!isMoving)
-        {
-            ProcessInputKeys();
-        }
+		if (!isMoving) 
+		{
+			ProcessInputKeys ();
+		} 
+		else 
+		{
+			transform.position = Vector3.MoveTowards (transform.position, v3TargetNode, fMovementSpeed * Time.deltaTime);
+			if (transform.position == v3TargetNode)
+			{
+				isMoving = false;
+			}
+		}
 	}
 
 	// Check all for direction movement keys and apply the corresponding movement.
@@ -47,14 +55,16 @@ public class Player_Movement : MonoBehaviour {
 		Vector3[] av3MovementDirections = { Vector3.forward, Vector3.back, Vector3.left, Vector3.right };
 		for ( int iLoop = 0; iLoop < apszMovementKeys.Length; ++iLoop ) 
 		{
-			if ( Input.GetKeyDown( apszMovementKeys[iLoop].ToString() ) )
+			if ( Input.GetKey( apszMovementKeys[iLoop].ToString() ) )
 			{
 				if ( gGrid.CheckGridSpace( transform.position, av3MovementDirections[iLoop] ) == true )
 				{
-					transform.Translate( av3MovementDirections[iLoop] );
+					var currentPosition = transform.position;
+					v3TargetNode = transform.position + av3MovementDirections[iLoop];
 					isMoving = true;
 				}
 			}
 		}
+
 	}
 }
