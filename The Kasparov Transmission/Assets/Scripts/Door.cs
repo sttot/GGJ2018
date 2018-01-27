@@ -46,7 +46,7 @@ public class Door : MonoBehaviour
 	void Openning()
 	{
 		transform.position = Vector3.MoveTowards (transform.position, v3OpenedPosition, fMovementSpeed * Time.deltaTime);
-		if ( transform.position ==  v3OpenedPosition )
+		if ( transform.position ==  v3OpenedPosition && eCurrentState != DoorState.Opened)
 		{
 			eCurrentState = DoorState.Opened;
 		}
@@ -54,7 +54,7 @@ public class Door : MonoBehaviour
 	void Closing()
 	{
 		transform.position = Vector3.MoveTowards (transform.position, v3ClosedPosition, fMovementSpeed * Time.deltaTime);
-		if ( transform.position ==  v3OpenedPosition )
+		if ( transform.position ==  v3OpenedPosition && eCurrentState != DoorState.Closed)
 		{
 			eCurrentState = DoorState.Closed;
 		}
