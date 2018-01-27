@@ -36,7 +36,7 @@ public class GameMaster : MonoBehaviour {
 
 	//Data the game loads from file and used by other parts of the game.
 	[HideInInspector]
-	public GameSessionInfo GameSessionData { get; private set; }
+	public GameSessionInfo GameSessionData;
 
 	[SerializeField]
 	private SceneLoader Loader;
