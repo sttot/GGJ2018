@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4146471922290582}
   - component: {fileID: 33716552770698776}
   - component: {fileID: 23691894375847768}
+  - component: {fileID: 114158823422078340}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343280943478024}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114158823422078340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343280943478024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9908984f99b554b9c64001896705b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsHole: 0

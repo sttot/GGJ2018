@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour {
 	int CurrentDissolvingGroup = 0;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		TileGoupsInOrderOfDissolve = GameObject.FindGameObjectsWithTag("Dissolver"); 
+		TileGoupsInOrderOfDissolve = Reverse (TileGoupsInOrderOfDissolve);
+
 		NumOfTIleGroups = TileGoupsInOrderOfDissolve.Length;
 		CurrentDissolvingGroup = 0;
 	}
@@ -22,11 +26,13 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int totalbots = 0;
-		for(int i=0;i<Exits.Length;i++){
+		for(int i=0;i<Exits.Length;i++)
+		{
 			totalbots += Exits [i].GetComponent<ExitScript> ().GetNumberOfBothsReachedTheExit();
 		}
 
-		if (totalbots >= NumberOfBotsToExit) {
+		if (totalbots >= NumberOfBotsToExit) 
+		{
 			LevelWon ();
 			return;
 		}
@@ -36,7 +42,8 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 
-		if (!TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolving ()) {
+		if (!TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolving ()) 
+		{
 			TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().TriggerDissolve ();
 		}
 
@@ -52,4 +59,16 @@ public class GameManager : MonoBehaviour {
 	void LevelLose(){
 		Debug.Log ("Game Over");
 	}
+
+	GameObject[] Reverse(GameObject[] array)
+	{
+		var newArray = new GameObject [array.Length];
+
+		for (int i = 0; i < array.Length; i++) 
+		{
+			newArray [array.Length - i - 1] = array [i];
+		}
+		return newArray;
+	}
+
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour {
 
     public bool isMoving = false;
-    public GameObject goDetectUnwalkable;
+    //public GameObject goDetectUnwalkable;
     public Grid gGrid;
     public Node[,] naGrid;
 	public Vector3 v3MovementDirection;
@@ -18,9 +18,10 @@ public class Player_Movement : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
     {
-        goDetectUnwalkable = GameObject.FindGameObjectWithTag("Pathing");
-        gGrid = goDetectUnwalkable.GetComponent<Grid>();
+        //goDetectUnwalkable = GameObject.FindGameObjectWithTag("Pathing");
+		gGrid = GameObject.FindGameObjectWithTag("Pathing").GetComponent<Grid>();
 		lgoMovingBots = new List<GameObject> ();
+
 	}
 
     // Use this to check the relevant grid the player wants to move to

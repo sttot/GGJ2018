@@ -5,9 +5,11 @@ using UnityEngine;
 public class ExitScript : MonoBehaviour {
 
 	int NumberBotsReached = 0;
+	int iNumberOfBotsNeeded;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		NumberBotsReached = 0;
 	}
 	
@@ -16,7 +18,8 @@ public class ExitScript : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter(Collider other)
+	{
 		//Debug.Log ("" + other.gameObject.tag.ToString());
 		if (other.gameObject.tag == "Player") {
 			other.gameObject.SetActive (false);
@@ -28,4 +31,8 @@ public class ExitScript : MonoBehaviour {
 		return NumberBotsReached;
 	}
 
+	public void SetBotsNeeded( int iNumberOfBots )
+	{
+		iNumberOfBotsNeeded = iNumberOfBots;
+	}
 }

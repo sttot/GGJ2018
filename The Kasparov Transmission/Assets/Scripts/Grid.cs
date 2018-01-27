@@ -11,16 +11,16 @@ public class Grid : MonoBehaviour {
 	[HideInInspector]
     public Node[,] naGrid;
 
+	[HideInInspector]
+	public Vector3[,] trTiles;
+
     float fNodeDiameter;
     int iGridSizeX;
     int iGridSizeY;
 
     void Start()
     {
-        fNodeDiameter   = fNodeRadius * 2.0f;
-        iGridSizeX      = Mathf.RoundToInt(v2GridWorldSize.x / fNodeDiameter);
-        iGridSizeY      = Mathf.RoundToInt(v2GridWorldSize.y / fNodeDiameter);
-        CreateGrid();
+        
     }
 
     public bool CheckGridSpace(Vector3 v3Position, Vector3 v3Check)
@@ -38,9 +38,15 @@ public class Grid : MonoBehaviour {
         return bWalkable;
     }
 
-    void CreateGrid()
+	public void CreateGrid(int iColCount, int iRowCount)
     {
+		fNodeDiameter   = fNodeRadius * 2.0f;
+		iGridSizeX      = Mathf.RoundToInt(iColCount / fNodeDiameter);
+		iGridSizeY      = Mathf.RoundToInt(iRowCount / fNodeDiameter);
+
         naGrid = new Node[iGridSizeX, iGridSizeY];
+		trTiles = new Vector3[iColCount, iRowCount];
+
         Vector3 v3WorldBottomLeft = transform.position - ( Vector3.right * v2GridWorldSize.x / 2 ) - ( Vector3.forward * v2GridWorldSize.y / 2 );
 
         for (int x = 0; x < iGridSizeX; x++)
@@ -50,6 +56,9 @@ public class Grid : MonoBehaviour {
                 Vector3 v3WorldPoint = v3WorldBottomLeft + Vector3.right * ( x * fNodeDiameter + fNodeRadius ) + Vector3.forward * ( y * fNodeDiameter + fNodeRadius );
                 bool bWalkable = !(Physics.CheckSphere(v3WorldPoint, (fNodeRadius - 0.05f), lmUnwalkableMask));
                 naGrid[x, y] = new Node( bWalkable, v3WorldPoint );
+				//Create placeholder position
+				trTiles [y, x] = new Vector3( ( ( -iColCount / 2.0f ) + 0.5f + x ), 0.0f, ( ( iRowCount / 2.0f ) + 0.5f - y ) );
+
 				//Logging function to show each grid space was created.
                 //Debug.Log( "Node at " + x + ", " + y );
             }

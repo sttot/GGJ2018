@@ -16,18 +16,23 @@ public class TileControl : MonoBehaviour {
 		
 	}
 
-	public void MakeHole(){
+	public void MakeHole()
+	{
 		IsHole = true;
 	}
 
-	public void SetColor(Color col){
+	public void SetColor(Color col)
+	{
 		GetComponent<MeshRenderer> ().material.color = col;
 	}
 
-	public void OnCollisionStay(Collision col){
-		if (IsHole) {
-			if (col.collider.gameObject.tag == "Player") {
-				col.collider.gameObject.GetComponentInParent<Player_Movement> ().HoleReached ();
+	public void OnCollisionStay(Collision col)
+	{
+		if (IsHole) 
+		{
+			if (col.collider.gameObject.tag == "Player") 
+			{
+				col.collider.gameObject.SetActive (false);
 			}
 		}
 	}

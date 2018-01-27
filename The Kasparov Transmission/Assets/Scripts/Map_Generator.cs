@@ -5,24 +5,25 @@ using UnityEngine;
 public class Map_Generator : MonoBehaviour 
 {
     public Transform trTilePrefab;
-    public Vector2 v2MapSize;
+	public Transform[,] trTiles;
 
     void Awake()
     {
-        GenerateMap();
     }
 
     // Place tiles in a 2D Array and instantiate each tile using a quad prefab
     // Size is determined by values of v2MapSize
-    public void GenerateMap()
+	public void GenerateMap(int iColCount, int iRowCount)
     {
-        for (int x = 0; x < v2MapSize.x; x++)
+		trTiles = new Transform[iColCount, iRowCount];
+		for (int x = 0; x < iColCount; x++)
         {
-            for (int y = 0; y < v2MapSize.y; y++)
+			for (int y = 0; y < iRowCount; y++)
             {
-               Vector3 v3TilePosition = new Vector3( ( ( -v2MapSize.x / 2.0f ) + 0.5f + x ), 0.0f, ( ( -v2MapSize.y / 2.0f ) + 0.5f + y ) );
-               Transform trNewTile = Instantiate( trTilePrefab, v3TilePosition, Quaternion.Euler( Vector3.right * 90 ) ) as Transform;
-            }
+				Vector3 v3TilePosition = new Vector3( ( ( -iColCount / 2.0f ) + 0.5f + x ), 0.0f, ( ( iRowCount / 2.0f ) + 0.5f - y ) );
+				Transform trNewTile = Instantiate( trTilePrefab, v3TilePosition, Quaternion.Euler( Vector3.right * 90 ), this.transform ) as Transform;
+				trTiles [y, x] = trNewTile;
+			}
         }
     }
 };
