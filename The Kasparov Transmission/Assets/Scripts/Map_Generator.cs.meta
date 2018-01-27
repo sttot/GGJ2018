@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e95e3b1e2ad8e2d4e8141479c5d432b9
+timeCreated: 1517017961
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - trTilePrefab: {fileID: 4146471922290582, guid: 7b63f0bb191c1344cbf50d15fd960fd5,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
