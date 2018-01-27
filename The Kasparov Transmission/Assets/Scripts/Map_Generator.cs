@@ -5,7 +5,6 @@ using UnityEngine;
 public class Map_Generator : MonoBehaviour 
 {
     public Transform trTilePrefab;
-
     public Vector2 v2MapSize;
 
     void Awake()
