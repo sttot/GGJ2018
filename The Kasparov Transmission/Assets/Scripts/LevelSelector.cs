@@ -10,4 +10,10 @@ public class LevelSelector : MonoBehaviour {
 		GameMaster.instance.activeScene = (GameMaster.ActiveScene) iLevel;
 		GameMaster.instance.SwapScenes();
 	}
+
+	public void LoadMainMenu() 
+	{
+		GameMaster.instance.activeScene = GameMaster.ActiveScene.MainMenu;
+		GameMaster.instance.SwapScenes();
+	}
 }
