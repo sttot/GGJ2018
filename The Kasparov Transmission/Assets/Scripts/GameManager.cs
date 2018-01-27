@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		Physics.gravity = new Vector3 (0, -0.5f, 0);
+	
 		TileGoupsInOrderOfDissolve = GameObject.FindGameObjectsWithTag("Dissolver"); 
 		TileGoupsInOrderOfDissolve = Reverse (TileGoupsInOrderOfDissolve);
 
