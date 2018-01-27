@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
 	}
 
 	DoorState eCurrentState;
-	public string sKey = "Default";
+	public int iKey = 0;
 	public float fMovementSpeed = 5.0f;
 	Vector3 v3ClosedPosition;
 	Vector3 v3OpenedPosition;

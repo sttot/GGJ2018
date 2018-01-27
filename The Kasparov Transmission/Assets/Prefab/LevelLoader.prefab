@@ -56,3 +56,5 @@ MonoBehaviour:
   Dissolver: {fileID: 1311678738327626, guid: 582af438772ad7046943bd2d3e39e44a, type: 2}
   Wall: {fileID: 1442502252943820, guid: f7587f7b9fdfee248a08b84bd763c7f6, type: 2}
   Robot: {fileID: 1887406036060844, guid: c4d5bfb9bdf874e48808b9a57576272e, type: 2}
+  Door: {fileID: 1756567079887210, guid: acb915435c70da14a865dd1b4d01f81d, type: 2}
+  Switch: {fileID: 1254122554664468, guid: 20a9a2911ccac4e498d72440ebfc8b55, type: 2}

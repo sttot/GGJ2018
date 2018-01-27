@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	//Please make sure all exits are added here
 	public int NumberOfBotsToExit = 1;
+	public float TimeBeforeDissolve = 5.0f;
 
 	public GameObject[] Exits;
 	public GameObject[] TileGoupsInOrderOfDissolve;
@@ -37,18 +38,24 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 
-		if (CurrentDissolvingGroup >= NumOfTIleGroups) {
-			LevelLose ();
-			return;
-		}
+		if (TimeBeforeDissolve <= 0.0f) {
+			
+			if (CurrentDissolvingGroup >= NumOfTIleGroups) {
+				LevelLose ();
+				return;
+			}
 
-		if (!TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolving ()) 
+			if (!TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolving ()) {
+				TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().TriggerDissolve ();
+			}
+
+			if (TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolveDone ()) {
+				CurrentDissolvingGroup++;
+			}
+		} 
+		else 
 		{
-			TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().TriggerDissolve ();
-		}
-
-		if (TileGoupsInOrderOfDissolve [CurrentDissolvingGroup].GetComponent<Dissolve> ().IsDissolveDone ()) {
-			CurrentDissolvingGroup++;
+			TimeBeforeDissolve -= Time.deltaTime;
 		}
 	}
 

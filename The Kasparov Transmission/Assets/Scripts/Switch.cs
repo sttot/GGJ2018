@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour 
 {
-	public string sKey = "Default";
+	public int iKey = 0;
 	public List<Door> cConnectedDoors;
 	public bool bConstantSwitch = true;
 
@@ -16,7 +16,7 @@ public class Switch : MonoBehaviour
 		foreach ( var goDoor in agoDoors )
 		{
 			Door cDoor = goDoor.GetComponent<Door> ();
-			if ( cDoor.sKey == this.sKey ) 
+			if ( cDoor.iKey == this.iKey ) 
 			{
 				cConnectedDoors.Add(cDoor);
 			}
