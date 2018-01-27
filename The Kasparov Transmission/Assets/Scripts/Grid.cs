@@ -5,11 +5,11 @@ using UnityEngine;
 public class Grid : MonoBehaviour {
 
     public LayerMask lmUnwalkableMask;
-
     public Vector2 v2GridWorldSize;
     public float fNodeRadius;
 
-    Node[,] naGrid;
+	[HideInInspector]
+    public Node[,] naGrid;
 
     float fNodeDiameter;
     int iGridSizeX;
@@ -17,24 +17,23 @@ public class Grid : MonoBehaviour {
 
     void Start()
     {
-        fNodeDiameter   = fNodeRadius * 2;
+        fNodeDiameter   = fNodeRadius * 2.0f;
         iGridSizeX      = Mathf.RoundToInt(v2GridWorldSize.x / fNodeDiameter);
         iGridSizeY      = Mathf.RoundToInt(v2GridWorldSize.y / fNodeDiameter);
-
         CreateGrid();
     }
 
     public bool CheckGridSpace(Vector3 v3Position, Vector3 v3Check)
     {
-        Vector3 v3WorldBottomLeft = transform.position - (Vector3.right * v2GridWorldSize.x / 2) - (Vector3.forward * v2GridWorldSize.y / 2);
-        Vector3 v3WorldPoint = v3WorldBottomLeft + Vector3.right * (v3Position.x * fNodeDiameter + fNodeRadius) + Vector3.forward * (v3Position.y * fNodeDiameter + fNodeRadius);
-
         Vector3 v3CheckGrid = v3Position + v3Check;
 
-        int v3CheckGridX = Mathf.RoundToInt(v3Position.x + v3Check.x);
-        int v3CheckGridY = Mathf.RoundToInt(v3Position.z + v3Check.z);
-        
-        bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.05f), lmUnwalkableMask));
+		//Unused values.
+		//Vector3 v3WorldBottomLeft = transform.position - ( Vector3.right * v2GridWorldSize.x / 2.0f ) - ( Vector3.forward * v2GridWorldSize.y / 2.0f );
+		//Vector3 v3WorldPoint = v3WorldBottomLeft + Vector3.right * ( v3Position.x * fNodeDiameter + fNodeRadius ) + Vector3.forward * ( v3Position.y * fNodeDiameter + fNodeRadius );
+		//int v3CheckGridX = Mathf.RoundToInt(v3Position.x + v3Check.x);
+		//int v3CheckGridY = Mathf.RoundToInt(v3Position.z + v3Check.z);
+
+		bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.05f), lmUnwalkableMask));
 
         return bWalkable;
     }
@@ -48,11 +47,11 @@ public class Grid : MonoBehaviour {
         {
             for (int y = 0; y < iGridSizeY; y++)
             {
-                Vector4 v4Rotation = new Vector4 (1.0f, 1.0f, 1.0f, 1.0f);
                 Vector3 v3WorldPoint = v3WorldBottomLeft + Vector3.right * ( x * fNodeDiameter + fNodeRadius ) + Vector3.forward * ( y * fNodeDiameter + fNodeRadius );
                 bool bWalkable = !(Physics.CheckSphere(v3WorldPoint, (fNodeRadius - 0.05f), lmUnwalkableMask));
                 naGrid[x, y] = new Node( bWalkable, v3WorldPoint );
-                Debug.Log( "Node at " + x + ", " + y );
+				//Logging function to show each grid space was created.
+                //Debug.Log( "Node at " + x + ", " + y );
             }
         }
     }
@@ -83,10 +82,5 @@ public class Grid : MonoBehaviour {
                 Gizmos.DrawCube( n.v3WorldPosition, Vector3.one * ( fNodeDiameter - 0.05f ) );
             }
         }
-    }
-
-    public Node[,] GetGrid()
-    {
-        return naGrid;
     }
 }
