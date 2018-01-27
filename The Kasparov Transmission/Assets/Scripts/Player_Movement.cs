@@ -126,10 +126,6 @@ public class Player_Movement : MonoBehaviour {
 		}
 		return agoChildren;
 	}
-	
-	public void ExitReached(){
-
-	}
 
 	public void HoleReached(){
 
