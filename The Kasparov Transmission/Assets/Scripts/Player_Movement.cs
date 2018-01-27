@@ -29,15 +29,7 @@ public class Player_Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        // If no key is pressed, check if there is any movement
-        // If no movement, can move by pressing key
-        isMoving = false;
-
-        // Movement Controls
-        if (!isMoving)
-        {
-            ProcessInputKeys();
-        }
+		ProcessInputKeys();
 	}
 
 	// Check all for direction movement keys and apply the corresponding movement.
@@ -49,12 +41,38 @@ public class Player_Movement : MonoBehaviour {
 		{
 			if ( Input.GetKeyDown( apszMovementKeys[iLoop].ToString() ) )
 			{
-				if ( gGrid.CheckGridSpace( transform.position, av3MovementDirections[iLoop] ) == true )
+				//Get list of 'Bot' children & Get the reordered list by direction
+				GroupMovement cGMovementComp = gameObject.GetComponent<GroupMovement>();
+				GameObject[] agoSortedBots 
+						= cGMovementComp.GetGroupMovementList( GetChildren(), GroupMovement.ConvertV3ToDirection( av3MovementDirections[iLoop] ) );
+
+				//GroupMovement.PrintGroup( agoSortedBots );
+				//Check grid space against each sorted bot in the group and translate.
+				foreach ( GameObject goSortedBot in agoSortedBots ) 
 				{
-					transform.Translate( av3MovementDirections[iLoop] );
-					isMoving = true;
+					if ( gGrid.CheckGridSpace( goSortedBot.transform.position, av3MovementDirections[iLoop] ) == true )
+					{
+						goSortedBot.transform.Translate( av3MovementDirections[iLoop] );
+					}
+					/*else 
+					{
+						Debug.Log(goSortedBot.name + " cannot move there!");
+					}*/
 				}
+				//Break as we only want to be able to move 1 direction per update.
+				break;
 			}
 		}
+	}
+
+	//Get all the level 1 children of this object's transform.
+	List<GameObject> GetChildren() 
+	{
+		List<GameObject> agoChildren = new List<GameObject>();
+		foreach (Transform child in transform) 
+		{
+			agoChildren.Add( child.gameObject );
+		}
+		return agoChildren;
 	}
 }
