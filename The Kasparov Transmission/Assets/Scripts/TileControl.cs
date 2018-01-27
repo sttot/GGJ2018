@@ -19,6 +19,8 @@ public class TileControl : MonoBehaviour {
 	public void MakeHole()
 	{
 		IsHole = true;
+		gameObject.GetComponent<Rigidbody> ().isKinematic = false;
+		gameObject.GetComponent<Rigidbody> ().useGravity = true;
 	}
 
 	public void SetColor(Color col)
