@@ -6,7 +6,7 @@ public class Grid : MonoBehaviour {
 
     public LayerMask lmUnwalkableMask;
     public Vector2 v2GridWorldSize;
-    public float fNodeRadius;
+	private float fNodeRadius = 0.3f;
 
 	[HideInInspector]
     public Node[,] naGrid;
@@ -33,14 +33,14 @@ public class Grid : MonoBehaviour {
 		//int v3CheckGridX = Mathf.RoundToInt(v3Position.x + v3Check.x);
 		//int v3CheckGridY = Mathf.RoundToInt(v3Position.z + v3Check.z);
 
-		bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.05f), lmUnwalkableMask));
+		bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.25f), lmUnwalkableMask));
 
         return bWalkable;
     }
 
 	public void CreateGrid(int iColCount, int iRowCount)
     {
-		fNodeDiameter   = fNodeRadius * 2.0f;
+		fNodeDiameter   = 0.5f * 2.0f;
 		iGridSizeX      = Mathf.RoundToInt(iColCount / fNodeDiameter);
 		iGridSizeY      = Mathf.RoundToInt(iRowCount / fNodeDiameter);
 

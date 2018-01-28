@@ -5,13 +5,16 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour {
 
     public bool isMoving = false;
+	public bool isTurning = false;
     //public GameObject goDetectUnwalkable;
     public Grid gGrid;
     public Node[,] naGrid;
 	public Vector3 v3MovementDirection;
-	public float fMovementSpeed = 5.0f;
+	private float fMovementSpeed = 2.0f;
 
 	float fMovementDistance = 0.0f;
+	float fTurnDuration = 0.7f;
+	Vector3 v3fLookDiretion;
 	List<GameObject> lgoMovingBots;
 
 
@@ -45,10 +48,35 @@ public class Player_Movement : MonoBehaviour {
 		} 
 		else 
 		{
+			// Everything bellow is 6 am coding without sleep
+			// Turning logic
+			if (isTurning) 
+			{
+				if (fTurnDuration > 0.0f) 
+				{
+					fTurnDuration -= Time.deltaTime;	
+					foreach(var goBot in lgoMovingBots)
+					{
+						var newRotation = Vector3.RotateTowards( goBot.transform.forward, v3fLookDiretion, 90.0f * Time.deltaTime, 0.0f);
+						goBot.transform.rotation = Quaternion.LookRotation (newRotation);
+					}
+				} 
+				else 
+				{
+					fTurnDuration = 0.7f;
+					isTurning = false;
+					foreach(var goBot in lgoMovingBots)
+					{
+						goBot.GetComponent<Animator> ().SetTrigger ("Run");
+					}
+
+				}
+
+				return;
+			}
+
+			// Turning logic
 			float fMovementPerFrame = fMovementSpeed * Time.deltaTime;
-
-
-
 			if ( fMovementDistance + fMovementPerFrame > 1.0f) {
 				fMovementPerFrame =  1.0f - fMovementDistance;
 				fMovementDistance = 1.0f;
@@ -57,17 +85,27 @@ public class Player_Movement : MonoBehaviour {
 			{
 				fMovementDistance += fMovementPerFrame;
 			}
-
 			foreach(var goBot in lgoMovingBots)
 			{
 				goBot.transform.position += fMovementPerFrame * v3MovementDirection;
+				if (fMovementDistance == 1.0f) 
+				{
+					var v3RoundedPosition = goBot.transform.position;
+					v3RoundedPosition.x = Mathf.Round (v3RoundedPosition.x);
+					v3RoundedPosition.z = Mathf.Round (v3RoundedPosition.z);
+					goBot.transform.position = v3RoundedPosition;
+				}
 			}
-
 			if (fMovementDistance == 1.0f)
 			{
 				fMovementDistance = 0.0f;
 				isMoving = false;
+				foreach(var goBot in lgoMovingBots)
+				{
+					goBot.GetComponent<Animator> ().SetTrigger ("Idle");
+				}
 				lgoMovingBots.Clear ();
+
 			}
 		}
 	}
@@ -92,30 +130,32 @@ public class Player_Movement : MonoBehaviour {
 				{
 					if ( gGrid.CheckGridSpace( goSortedBot.transform.position, av3MovementDirections[iLoop] ) == true )
 					{
-						goSortedBot.transform.Translate( av3MovementDirections[iLoop] );
+						goSortedBot.transform.position += av3MovementDirections[iLoop];
 						lgoMovingBots.Add (goSortedBot);
 						
 						//The point here and below is that we will change the color of the bots
 						//to indicate if they accepted the command to move.
-						goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.green;
+						//goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.green;
 					}
 					else 
 					{
 						//Debug.Log(goSortedBot.name + " cannot move there!");
-						goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.red;
+						//goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.red;
 					}				}
 				if (lgoMovingBots.Count > 0)
 				{
+					v3fLookDiretion = av3MovementDirections[iLoop];
 					v3MovementDirection = av3MovementDirections[iLoop];
 					// Very bad implementation
 					foreach(var goBot in lgoMovingBots)
 					{
-						goBot.transform.position -= v3MovementDirection;
+						goBot.transform.position -= av3MovementDirections[iLoop];
+						goBot.GetComponent<Animator> ().SetTrigger ("Turn");
 					}
 					isMoving = true;
-					//lgoMovingBots.Clear ();
+					isTurning = true;
 				}
-				//Break as we only want to be able to move 1 direction per update.
+
 				break;
 			}
 		}

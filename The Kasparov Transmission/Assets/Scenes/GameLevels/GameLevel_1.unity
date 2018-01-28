@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
+  isTurning: 0
   gGrid: {fileID: 0}
   v3MovementDirection: {x: 0, y: 0, z: 0}
   fMovementSpeed: 5
@@ -676,6 +677,12 @@ Prefab:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 114361944583253570, guid: 87644b14d0559374e8c1dfec45d42ed1,
+        type: 2}
+      propertyPath: Robot
+      value: 
+      objectReference: {fileID: 1391926427378110, guid: 2ef531ab33e2ea646a8dbda58ec09166,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87644b14d0559374e8c1dfec45d42ed1, type: 2}
   m_IsPrefabParent: 0

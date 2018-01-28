@@ -83,7 +83,7 @@ public class LevelLoader : MonoBehaviour
 			{"WL", "  ", "  ", "  ", "RO",  "RO",  "RO", "  ", "  ", "  ", "WL"},
 			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
 			{"WL", "  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
-			{"WL", "DI", "DI", "DI", "DI",  "DI",  "DI", "DI", "DI", "DI", "WL"},
+			{ "WL","  ", "  ", "  ", "  ",  "  ",  "  ", "  ", "  ", "  ", "WL"},
 			{"WL", "WL", "WL", "WL", "WL",  "WL",  "WL", "WL", "WL", "WL", "WL"}
 		},
 		// Level6
@@ -103,7 +103,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL",  "HO",  "HO", "  ", "RO",   "RO",  "RO", "  ",  "HO",  "HO",  "WL"},
 			{ "WL",  "HO",  "HO", "  ", "  ",   "  ",  "  ", "  ",  "HO",  "HO",  "WL"},
 			{ "WL",  "HO",  "HO", "  ", "  ",   "  ",  "  ", "  ",  "HO",  "HO",  "WL"},
-			{ "WL",  "DI",  "DI", "DI", "DI",   "DI",  "DI", "DI",  "DI",  "DI",  "WL"},
+			{ "WL",  "  ",  "  ", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "WL",  "WL", "WL", "WL",   "WL",  "WL", "WL",  "WL",  "WL",  "WL"}
 		},
 		// Level7
@@ -124,7 +124,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL",  "RO",  "RO", "RO", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
 			{ "WL",  "  ",  "  ", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
 			{ "WL",  "  ",  "  ", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
-			{ "WL",  "DI",  "DI", "DI", "DI",   "DI",  "DI", "DI",  "DI",  "DI", "WL"},
+			{ "WL",  "  ",  "  ", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
 			{ "WL",  "WL",  "WL", "WL", "WL",   "WL",  "WL", "WL",  "WL",  "WL", "WL"}
 		},
 		// Level8
@@ -137,8 +137,8 @@ public class LevelLoader : MonoBehaviour
 			{ "WL",  "DS3", "WL", "  ", "  ",  "RD2",  "WL", "WL",  "  ",  "WL", "WL"},
 			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
 			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
-			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
-			{ "WL",  "SW2", "HO", "HO", "WL",  "SW1",  "WL", "HO", "HO", "SW3",  "WL"},
+			{ "WL",  "SW2", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
+			{ "WL",   "  ", "HO", "HO", "WL",  "SW1",  "WL", "HO", "HO", "SW3",  "WL"},
 			{ "WL",   "  ", "HO", "HO", "WL",   "  ",  "WL", "HO", "HO",  "  ",  "WL"},
 			{ "WL",   "  ", "HO", "HO", "WL",   "  ",  "WL", "HO", "HO",  "  ",  "WL"},
 			{ "WL",   "  ", "WL", "WL", "WL",   "RD1", "WL", "WL", "WL",  "  ",  "WL"},
@@ -147,7 +147,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL",   "  ", "  ", "  ", "RO",   "RO",  "RO", "  ", "  ",  "  ",  "WL"},
 			{ "WL",   "  ", "  ", "  ", "  ",   "  ",  "  ", "  ", "  ",  "  ",  "WL"},
 			{ "WL",   "  ", "  ", "  ", "  ",   "  ",  "  ", "  ", "  ",  "  ",  "WL"},
-			{ "WL",   "DI", "DI", "DI", "DI",   "DI",  "DI", "DI", "DI",  "DI",  "WL"},
+			{ "WL", "  ",  "  ", "  ", "  ",   "  ",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",   "WL", "WL", "WL", "WL",   "WL",  "WL", "WL", "WL",  "WL",  "WL"}
 		},
 		// Level9
@@ -161,9 +161,9 @@ public class LevelLoader : MonoBehaviour
 			{ "WL", "HO",  "  ", "  ", "  ",   "HO",  "HO",   "HO",  "  ",  "  ",  "WL"},
 			{ "WL", "HO",  "  ", "  ", "  ",   "HO",  "HO",   "HO",  "  ",  "  ",  "WL"},
 			{ "WL", "WL",  "WL", "  ", "WL",   "WL",  "WL",   "WL",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "HO",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "HO",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "HO",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "RD2",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "  ",  "SW2", "RD2",   "  ",  "SW1", "  ",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "RD2",   "  ",  "  ",  "  ",  "WL"},
@@ -173,7 +173,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL", "  ",  "  ", "  ", "RO",   "RO",  "RO",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "  ",   "  ",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "  ",   "  ",  "  ",   "  ",  "  ",  "  ",  "WL"},
-			{ "WL", "DI",  "DI", "DI", "DI",   "DI",  "DI",   "DI",  "DI",  "DI",  "WL"},
+			{ "WL", "  ",  "  ", "  ", "  ",   "  ",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "WL",  "WL", "WL", "WL",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"}
 		},
 		// Level 10
@@ -202,7 +202,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL", "  ",   "  ",  "  ", "DS1",   "WL",  "RO",   "RO",  "RO",  "WL",  "WL"},
 			{ "WL", "  ",   "  ",  "  ", "DS2",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"},
 			{ "WL", "  ",   "  ",  "  ", "DS3",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"},
-			{ "WL", "DI",   "DI",  "DI",  "DI",   "WL",  "DI",   "DI",  "DI",  "DI",  "WL"},
+			{ "WL", "  ",   "  ",  "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "WL",   "WL",  "WL",  "WL",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"}
 		}
 	};
@@ -215,7 +215,6 @@ public class LevelLoader : MonoBehaviour
 		public const string Robot 			= "RO";
 		public const string Wall 			= "WL";
 		public const string Hole			= "HO";
-		public const string Dissolve		= "DI";
 		public const string Door			= "DS";
 		public const string ReverseDoor		= "RD";
 		public const string Switch			= "SW";
@@ -223,8 +222,8 @@ public class LevelLoader : MonoBehaviour
 
 	public GameObject Exit;
 	public GameObject Floor;
-	public GameObject Dissolver;
 	public GameObject Wall;
+	public GameObject Dissolver;
 	public GameObject Robot;
 	public GameObject Door;
 	public GameObject Switch;
@@ -254,6 +253,7 @@ public class LevelLoader : MonoBehaviour
 
 		for (int i = 0; i < iColCount; i++)
 		{
+			goCurrentDissolver = Instantiate (Dissolver, gGrid.transform);
 			for (int j = 0; j < iRowCount; j++) 
 			{
 				var v3Position = gGrid.trTiles [j, i];
@@ -277,50 +277,42 @@ public class LevelLoader : MonoBehaviour
 				{
 					// Create an exit and set its size
 					case InputCode.Exit:
-					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
-					goExit.GetComponent<ExitScript> ().SetBotsNeeded ( iNumber );
+					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
+						goExit.GetComponent<ExitScript> ().SetBotsNeeded ( iNumber );
 						break;
 
 					// Create a wall
 					case InputCode.Wall:
-						Instantiate (Wall, new Vector3(v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						Instantiate (Wall, new Vector3(v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 
 					// Create both robot and the floor
 					case InputCode.Robot:
-						Instantiate (Robot, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goBotsStorage.transform);
-						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
-						break;
-
-					// Create Dissolving floor as a group
-					case InputCode.Dissolve:
-						if (goCurrentDissolver == null) 
-						{
-							goCurrentDissolver = Instantiate (Dissolver, gGrid.transform);
-						}
+						Instantiate (Robot, new Vector3 (v3Position.x, 0.5f, v3Position.z), Quaternion.identity, goBotsStorage.transform);
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 
+
 					// Create door
 					case InputCode.Door:
-						var goDoor = Instantiate (Door, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						var goDoor = Instantiate (Door, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						goDoor.GetComponent<Door> ().iKey = iNumber;
-						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 
 					// Create Reverse
 					case InputCode.ReverseDoor:
-						var goReverseDoor = Instantiate (Door, new Vector3 (v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+					var goReverseDoor = Instantiate (Door, new Vector3 (v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						goReverseDoor.GetComponent<Door> ().iKey = iNumber;
 						goReverseDoor.GetComponent<Door> ().bIsReverse = true;
-						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 
 					// Create switch
 					case InputCode.Switch:
 						var goSwitch = Instantiate (Switch, new Vector3 (v3Position.x, 0.5f, v3Position.z), Quaternion.identity, gGrid.transform);
 						goSwitch.GetComponent<Switch> ().iKey = iNumber;
-						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 
 					// Create hole
@@ -329,18 +321,11 @@ public class LevelLoader : MonoBehaviour
 
 					// Create a floor
 					default:
-						Instantiate (Floor, new Vector3(v3Position.x, 0, v3Position.z), Quaternion.identity, gGrid.transform);
+						Instantiate (Floor, new Vector3(v3Position.x, 0, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
 				}
 
-				// Stop adding to disolver when disolver line ends
-				switch (CurrentLevel [i, j]) {
-					case InputCode.Dissolve:
-						break;
-					default:
-						goCurrentDissolver = null;
-						break;
-				}
+
 
 			}
 		}

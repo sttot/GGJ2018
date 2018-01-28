@@ -30,12 +30,12 @@ public class TileControl : MonoBehaviour {
 
 	public void OnCollisionStay(Collision col)
 	{
-		if (IsHole) 
-		{
-			if (col.collider.gameObject.tag == "Player") 
-			{
-				col.collider.gameObject.SetActive (false);
-			}
-		}
+		//if (IsHole) 
+		//{
+		//	if (col.collider.gameObject.tag == "Player") 
+		//	{
+		//		col.collider.gameObject.SetActive (false);
+		//	}
+		//}
 	}
 }
