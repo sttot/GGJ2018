@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
 	int NumOfTIleGroups = 0;
 	int CurrentDissolvingGroup = 0;
+	bool bGameWon = false;
 
 	// Use this for initialization
 	void Start () 
@@ -22,23 +23,34 @@ public class GameManager : MonoBehaviour {
 		TileGoupsInOrderOfDissolve = GameObject.FindGameObjectsWithTag("Dissolver"); 
 		TileGoupsInOrderOfDissolve = Reverse (TileGoupsInOrderOfDissolve);
 
+		Exits = GameObject.FindGameObjectsWithTag("Exit"); 
 		NumOfTIleGroups = TileGoupsInOrderOfDissolve.Length;
 		CurrentDissolvingGroup = 0;
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		if (bGameWon) 
+		{
+			return;
+		}
+
 		int totalbots = 0;
 		for(int i=0;i<Exits.Length;i++)
 		{
-			totalbots += Exits [i].GetComponent<ExitScript> ().GetNumberOfBothsReachedTheExit();
+			totalbots += Exits [i].GetComponent<ExitScript> ().GetNumberOfBotLeft();
 		}
 
-		if (totalbots >= NumberOfBotsToExit) 
+		if (totalbots == 0) 
 		{
-			LevelWon ();
+			bGameWon = true;
+			WinGame ();
+
 			return;
 		}
+
 
 		if (TimeBeforeDissolve <= 0.0f) {
 			
@@ -61,11 +73,13 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void LevelWon(){
+	void LevelWon()
+	{
 		Debug.Log ("Level Complete");
 	}
 
-	void LevelLose(){
+	void LevelLose()
+	{
 //		Debug.Log ("Game Over");
 	}
 
@@ -80,4 +94,26 @@ public class GameManager : MonoBehaviour {
 		return newArray;
 	}
 
+	void WinGame() 
+	{
+		// Pop up UI
+		int iArrayIndex = (int) GameMaster.instance.activeScene - 1;
+		GameMaster.instance.GameSessionData.LevelsComplete[ iArrayIndex ] = true;
+		GameObject goScreenGroup = FindObject( "ScreenContainer", "WinScreen" );
+		goScreenGroup.SetActive( true );
+
+	}
+
+	GameObject FindObject( string strParentName, string strChildName )
+	{
+		Transform[] trs = GameObject.Find(strParentName).GetComponentsInChildren<Transform>( true );
+		foreach ( Transform t in trs )
+		{
+			if ( t.name == strChildName )
+			{
+				return t.gameObject;
+			}
+		}
+		return null;
+	}
 }

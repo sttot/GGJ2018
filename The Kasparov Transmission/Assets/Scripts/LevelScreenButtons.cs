@@ -18,7 +18,7 @@ public class LevelScreenButtons : MonoBehaviour {
 
 	public void LoadNextNevel() 
 	{
-		GameMaster.ActiveScene eNextScene = GameMaster.instance.activeScene + 1;
-		SceneManager.LoadScene( eNextScene.ToString() );
+		GameMaster.instance.activeScene = GameMaster.instance.activeScene + 1;
+		SceneManager.LoadScene( GameMaster.instance.activeScene.ToString() );
 	}
 }

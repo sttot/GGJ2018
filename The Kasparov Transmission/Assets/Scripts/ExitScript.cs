@@ -21,14 +21,17 @@ public class ExitScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		//Debug.Log ("" + other.gameObject.tag.ToString());
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player") 
+		{
 			other.gameObject.SetActive (false);
 			NumberBotsReached++;
 		}
 	}
 
-	public int GetNumberOfBothsReachedTheExit(){
-		return NumberBotsReached;
+	public int GetNumberOfBotLeft()
+	{
+		int iNeededBots = iNumberOfBotsNeeded - NumberBotsReached;
+		return ( iNeededBots ) < 0 ? 0 : iNeededBots;
 	}
 
 	public void SetBotsNeeded( int iNumberOfBots )
