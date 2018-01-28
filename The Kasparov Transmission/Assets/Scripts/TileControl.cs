@@ -13,7 +13,9 @@ public class TileControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (gameObject.transform.position.y < -30) {
+			Destroy (gameObject);
+		}		
 	}
 
 	public void MakeHole()
