@@ -12,6 +12,10 @@ public class DebugControlScript : MonoBehaviour {
 
 	public void WinGame() 
 	{
+		// Disable level.
+		GameObject.Find( "A*" ).SetActive( false );
+		GameObject.Find( "Bots" ).SetActive( false );
+
 		int iArrayIndex = (int) GameMaster.instance.activeScene - 1;
 		GameMaster.instance.GameSessionData.LevelsComplete[ iArrayIndex ] = true;
 		GameObject goScreenGroup = FindObject( "ScreenContainer", "WinScreen" );
@@ -20,6 +24,10 @@ public class DebugControlScript : MonoBehaviour {
 
 	public void LoseGame() 
 	{
+		// Disable level.
+		GameObject.Find( "A*" ).SetActive( false );
+		GameObject.Find( "Bots" ).SetActive( false );
+
 		GameObject goScreenGroup = FindObject( "ScreenContainer", "RetryScreen" );
 		goScreenGroup.SetActive( true );
 	}
