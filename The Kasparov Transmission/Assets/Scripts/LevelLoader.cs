@@ -310,7 +310,7 @@ public class LevelLoader : MonoBehaviour
 
 					// Create switch
 					case InputCode.Switch:
-						var goSwitch = Instantiate (Switch, new Vector3 (v3Position.x, 0.5f, v3Position.z), Quaternion.identity, gGrid.transform);
+					var goSwitch = Instantiate (Switch, new Vector3 (v3Position.x, 0.2f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						goSwitch.GetComponent<Switch> ().iKey = iNumber;
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
