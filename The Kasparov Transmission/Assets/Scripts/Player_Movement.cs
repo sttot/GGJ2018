@@ -108,6 +108,9 @@ public class Player_Movement : MonoBehaviour {
 
 			}
 		}
+		if (gameObject.transform.position.y < -30) {
+			Destroy (gameObject);
+		}		
 	}
 
 	// Check all for direction movement keys and apply the corresponding movement.
