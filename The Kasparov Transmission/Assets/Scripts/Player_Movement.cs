@@ -94,12 +94,16 @@ public class Player_Movement : MonoBehaviour {
 					{
 						goSortedBot.transform.Translate( av3MovementDirections[iLoop] );
 						lgoMovingBots.Add (goSortedBot);
+						
+						//The point here and below is that we will change the color of the bots
+						//to indicate if they accepted the command to move.
+						goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.green;
 					}
-					/*else 
+					else 
 					{
-						Debug.Log(goSortedBot.name + " cannot move there!");
-					}*/
-				}
+						//Debug.Log(goSortedBot.name + " cannot move there!");
+						goSortedBot.GetComponent<MeshRenderer> ().materials[0].color = Color.red;
+					}				}
 				if (lgoMovingBots.Count > 0)
 				{
 					v3MovementDirection = av3MovementDirections[iLoop];

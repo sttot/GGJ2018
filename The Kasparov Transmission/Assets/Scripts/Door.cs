@@ -6,24 +6,21 @@ public class Door : MonoBehaviour
 {
 	enum DoorState
 	{
-		Closed 		= 0,
-		Opened 		= 1,
-		Closing 	= 2,
-		Openning  	= 3
+		Stale 		= 0,
+		Moving 		= 1,
 	}
 
-	DoorState eCurrentState;
-	public string sKey = "Default";
+	public int iKey = 0;
 	public float fMovementSpeed = 5.0f;
-	Vector3 v3ClosedPosition;
-	Vector3 v3OpenedPosition;
+	public bool bIsReverse;
+
+	DoorState eCurrentState;
+	Vector3 v3TargetPosition;
 
 	// Use this for initialization
 	void Start () 
 	{
-		v3ClosedPosition = transform.position;
-		v3OpenedPosition = transform.position;
-		v3OpenedPosition.y -= 1;
+		v3TargetPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -31,40 +28,33 @@ public class Door : MonoBehaviour
 	{
 		switch (eCurrentState) 
 		{
-			case DoorState.Closed:
-			case DoorState.Opened:
+			case DoorState.Stale:
 				break;
-			case DoorState.Openning:
-				Openning ();
-				break;
-			case DoorState.Closing:
-				Closing ();
+			case DoorState.Moving:
+				Moving ();
 				break;
 		}
 	}
 
-	void Openning()
+	void Moving()
 	{
-		transform.position = Vector3.MoveTowards (transform.position, v3OpenedPosition, fMovementSpeed * Time.deltaTime);
-		if ( transform.position ==  v3OpenedPosition && eCurrentState != DoorState.Opened)
+		
+		transform.position = Vector3.MoveTowards (transform.position, v3TargetPosition, fMovementSpeed * Time.deltaTime);
+		if ( transform.position ==  v3TargetPosition && eCurrentState != DoorState.Stale)
 		{
-			eCurrentState = DoorState.Opened;
+			eCurrentState = DoorState.Stale;
 		}
 	}
-	void Closing()
+
+	public void Move()
 	{
-		transform.position = Vector3.MoveTowards (transform.position, v3ClosedPosition, fMovementSpeed * Time.deltaTime);
-		if ( transform.position ==  v3OpenedPosition && eCurrentState != DoorState.Closed)
-		{
-			eCurrentState = DoorState.Closed;
+		eCurrentState = DoorState.Moving;
+		if (bIsReverse) {
+			v3TargetPosition.y += 1;
 		}
-	}
-	public void Open()
-	{
-		eCurrentState = DoorState.Openning;
-	}
-	public void Close()
-	{
-		eCurrentState = DoorState.Closing;
+		else 
+		{
+			v3TargetPosition.y -= 1;
+		}
 	}
 }

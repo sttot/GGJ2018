@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour 
 {
-	public string sKey = "Default";
+	public int iKey = 0;
 	public List<Door> cConnectedDoors;
 	public bool bConstantSwitch = true;
+	public bool bIsTriggered = false;
 
 	// Use this for initialization
 	void Start () 
@@ -16,7 +17,7 @@ public class Switch : MonoBehaviour
 		foreach ( var goDoor in agoDoors )
 		{
 			Door cDoor = goDoor.GetComponent<Door> ();
-			if ( cDoor.sKey == this.sKey ) 
+			if ( cDoor.iKey == this.iKey ) 
 			{
 				cConnectedDoors.Add(cDoor);
 			}
@@ -31,27 +32,18 @@ public class Switch : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.tag == "Player") 
-		{
-			foreach (var cConnectedDoor in cConnectedDoors) 
-			{
-				cConnectedDoor.Open ();
-			}
-		}
-	}
-
-	void OnTriggerExit(Collider col)
-	{
-		if (!bConstantSwitch) 
+		if (!bIsTriggered) 
 		{
 			if (col.tag == "Player") 
 			{
+				bIsTriggered = true;
 				foreach (var cConnectedDoor in cConnectedDoors) 
 				{
-					cConnectedDoor.Close ();
+					cConnectedDoor.Move ();
 				}
 			}
 		}
 
 	}
+
 }

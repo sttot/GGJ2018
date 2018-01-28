@@ -45,7 +45,7 @@ public class Grid : MonoBehaviour {
 		iGridSizeY      = Mathf.RoundToInt(iRowCount / fNodeDiameter);
 
         naGrid = new Node[iGridSizeX, iGridSizeY];
-		trTiles = new Vector3[iColCount, iRowCount];
+		trTiles = new Vector3[iRowCount, iColCount];
 
         Vector3 v3WorldBottomLeft = transform.position - ( Vector3.right * v2GridWorldSize.x / 2 ) - ( Vector3.forward * v2GridWorldSize.y / 2 );
 
@@ -57,7 +57,7 @@ public class Grid : MonoBehaviour {
                 bool bWalkable = !(Physics.CheckSphere(v3WorldPoint, (fNodeRadius - 0.05f), lmUnwalkableMask));
                 naGrid[x, y] = new Node( bWalkable, v3WorldPoint );
 				//Create placeholder position
-				trTiles [y, x] = new Vector3( ( ( -iColCount / 2.0f ) + 0.5f + x ), 0.0f, ( ( iRowCount / 2.0f ) + 0.5f - y ) );
+				trTiles [y, x] = new Vector3( ( ( -iRowCount / 2.0f ) + 0.5f + y ), 0.0f,  ( ( iColCount / 2.0f ) + 0.5f - x ));
 
 				//Logging function to show each grid space was created.
                 //Debug.Log( "Node at " + x + ", " + y );
