@@ -26,14 +26,15 @@ public class Grid : MonoBehaviour {
     public bool CheckGridSpace(Vector3 v3Position, Vector3 v3Check)
     {
         Vector3 v3CheckGrid = v3Position + v3Check;
-
+		// make scanning position a bit higher
+		v3CheckGrid.y += 0.5f;
 		//Unused values.
 		//Vector3 v3WorldBottomLeft = transform.position - ( Vector3.right * v2GridWorldSize.x / 2.0f ) - ( Vector3.forward * v2GridWorldSize.y / 2.0f );
 		//Vector3 v3WorldPoint = v3WorldBottomLeft + Vector3.right * ( v3Position.x * fNodeDiameter + fNodeRadius ) + Vector3.forward * ( v3Position.y * fNodeDiameter + fNodeRadius );
 		//int v3CheckGridX = Mathf.RoundToInt(v3Position.x + v3Check.x);
 		//int v3CheckGridY = Mathf.RoundToInt(v3Position.z + v3Check.z);
 
-		bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.25f), lmUnwalkableMask));
+		bool bWalkable = !(Physics.CheckSphere(v3CheckGrid, (fNodeRadius - 0.05f), lmUnwalkableMask));
 
         return bWalkable;
     }
@@ -79,17 +80,17 @@ public class Grid : MonoBehaviour {
         return naGrid[x, y];
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube( transform.position, new Vector3( v2GridWorldSize.x, 1, v2GridWorldSize.y ) );
-
-        if (naGrid != null)
-        {
-            foreach (Node n in naGrid) 
-            {
-                Gizmos.color = (n.bWalkable) ? Color.white : Color.red;
-                Gizmos.DrawCube( n.v3WorldPosition, Vector3.one * ( fNodeDiameter - 0.05f ) );
-            }
-        }
-    }
+//    void OnDrawGizmos()
+//    {
+//        Gizmos.DrawWireCube( transform.position, new Vector3( v2GridWorldSize.x, 1, v2GridWorldSize.y ) );
+//
+//        if (naGrid != null)
+//        {
+//            foreach (Node n in naGrid) 
+//            {
+//                Gizmos.color = (n.bWalkable) ? Color.white : Color.red;
+//                Gizmos.DrawCube( n.v3WorldPosition, Vector3.one * ( fNodeDiameter - 0.05f ) );
+//            }
+//        }
+//    }
 }

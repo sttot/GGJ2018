@@ -6,7 +6,7 @@ public class ExitScript : MonoBehaviour {
 
 	int NumberBotsReached = 0;
 	int iNumberOfBotsNeeded;
-
+	public Texture[] textures;
 	// Use this for initialization
 	void Start () 
 	{
@@ -15,7 +15,23 @@ public class ExitScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		int NumToDisplay;
 
+		if (iNumberOfBotsNeeded == 0) {
+			NumToDisplay = 0;
+		} else {
+			NumToDisplay = (iNumberOfBotsNeeded - NumberBotsReached);
+		}
+		if(NumToDisplay==0)
+		{
+			gameObject.GetComponent<MeshRenderer> ().materials [0].mainTexture = textures [9];
+			iNumberOfBotsNeeded = 0; //This is here so that we do not end with a negative array index if one more
+						//Robot passes through the gate.
+		} 
+		else 
+		{
+			gameObject.GetComponent<MeshRenderer> ().materials [0].mainTexture = textures [NumToDisplay - 1];
+		}
 	}
 
 	void OnTriggerEnter(Collider other)

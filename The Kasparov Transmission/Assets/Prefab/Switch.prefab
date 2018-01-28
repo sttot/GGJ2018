@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23241884281690990}
   - component: {fileID: 114862324370611578}
   - component: {fileID: 114139229803164014}
-  - component: {fileID: 54797778374962510}
+  - component: {fileID: 54122597071212692}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Switch
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254122554664468}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54797778374962510
+--- !u!54 &54122597071212692
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
