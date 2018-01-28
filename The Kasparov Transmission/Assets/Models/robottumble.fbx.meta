@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 132af7abd3d5c9346a5db371d5713a4c
+timeCreated: 1517120678
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Antena_1
+    100002: Antena_2
+    100004: Antena_3
+    100006: Antena_4
+    100008: Antena_5
+    100010: Antena_6
+    100012: Antena_control
+    100014: Antena_control1
+    100016: Antena_control2
+    100018: Antena_control3
+    100020: Base
+    100022: Base_control
+    100024: Body
+    100026: Body_control
+    100028: Head
+    100030: Head_control
+    100032: Hips
+    100034: ikHandle1
+    100036: ikHandle2
+    100038: Left_knee
+    100040: Left_leg_1
+    100042: Left_leg_2
+    100044: Left_leg_3
+    100046: Left_leg_control
+    100048: Right_knee_control
+    100050: Right_leg_1
+    100052: Right_leg_2
+    100054: Right_leg_3
+    100056: Right_leg_control
+    100058: //RootNode
+    100060: Root
+    400000: Antena_1
+    400002: Antena_2
+    400004: Antena_3
+    400006: Antena_4
+    400008: Antena_5
+    400010: Antena_6
+    400012: Antena_control
+    400014: Antena_control1
+    400016: Antena_control2
+    400018: Antena_control3
+    400020: Base
+    400022: Base_control
+    400024: Body
+    400026: Body_control
+    400028: Head
+    400030: Head_control
+    400032: Hips
+    400034: ikHandle1
+    400036: ikHandle2
+    400038: Left_knee
+    400040: Left_leg_1
+    400042: Left_leg_2
+    400044: Left_leg_3
+    400046: Left_leg_control
+    400048: Right_knee_control
+    400050: Right_leg_1
+    400052: Right_leg_2
+    400054: Right_leg_3
+    400056: Right_leg_control
+    400058: //RootNode
+    400060: Root
+    2100000: Left_colour
+    2100002: Right_colour
+    2100004: Mid_colour
+    2100006: Character_colours
+    2300000: Antena_control
+    2300002: Antena_control1
+    2300004: Antena_control2
+    2300006: Antena_control3
+    2300008: Body_control
+    2300010: Head_control
+    2300012: Left_knee
+    2300014: Left_leg_control
+    2300016: Right_knee_control
+    2300018: Right_leg_control
+    3300000: Antena_control
+    3300002: Antena_control1
+    3300004: Antena_control2
+    3300006: Antena_control3
+    3300008: Body_control
+    3300010: Head_control
+    3300012: Left_knee
+    3300014: Left_leg_control
+    3300016: Right_knee_control
+    3300018: Right_leg_control
+    4300000: Left_leg_control
+    4300002: Right_leg_control
+    4300004: Body_control
+    4300006: Head_control
+    4300008: Antena_control
+    4300010: Antena_control1
+    4300012: Antena_control2
+    4300014: Antena_control3
+    4300016: Left_knee
+    4300018: Right_knee_control
+    4300020: Body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Body
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
