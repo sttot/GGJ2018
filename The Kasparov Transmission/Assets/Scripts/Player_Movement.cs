@@ -104,6 +104,7 @@ public class Player_Movement : MonoBehaviour {
 		
 		foreach(var goBot in lgoMovingBots){
 			if (goBot.transform.position.y < -30) {
+				goBot.GetComponents<AudioSource> ()[1].Play ();
 				Destroy (goBot);
 			}
 		}
@@ -150,6 +151,7 @@ public class Player_Movement : MonoBehaviour {
 					{
 						goBot.transform.position -= av3MovementDirections[iLoop];
 						goBot.GetComponent<Animator> ().SetTrigger ("Turn");
+						goBot.GetComponents<AudioSource> ()[0].Play ();
 					}
 					isMoving = true;
 					isTurning = true;

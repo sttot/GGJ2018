@@ -40,6 +40,8 @@ public class Switch : MonoBehaviour
 				foreach (var cConnectedDoor in cConnectedDoors) 
 				{
 					cConnectedDoor.Move ();
+					gameObject.GetComponent<AudioSource> ().Play ();
+
 				}
 			}
 		}

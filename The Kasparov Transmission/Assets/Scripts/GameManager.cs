@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour {
 	void LevelLose()
 	{
 		// Disable level.
+		gameObject.GetComponents<AudioSource>()[1].Play();
 		GameObject.Find( "A*" ).SetActive( false );
 		GameObject.Find( "Bots" ).SetActive( false );
 
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour {
 	void WinGame() 
 	{
 		// Disable level.
+		gameObject.GetComponents<AudioSource>()[0].Play();
 		GameObject.Find("A*").SetActive( false );
 		GameObject.Find("Bots").SetActive( false );
 

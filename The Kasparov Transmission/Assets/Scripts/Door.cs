@@ -56,5 +56,6 @@ public class Door : MonoBehaviour
 		{
 			v3TargetPosition.y -= 1;
 		}
+		gameObject.GetComponent<AudioSource> ().Play ();
 	}
 }
