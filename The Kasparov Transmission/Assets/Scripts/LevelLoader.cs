@@ -131,17 +131,17 @@ public class LevelLoader : MonoBehaviour
 		new string[,]
 		{
 			{ "WL",   "WL", "WL", "WL", "WL",  "EX3", "WL", "WL",  "WL", "EX3",  "WL"},
-			{ "EX3",  "  ", "  ", "  ", "  ",  "  ",  "WL", "WL",  "  ",  "  ",  "WL"},
-			{ "WL",   "  ", "  ", "  ", "  ",  "  ",  "WL", "WL",  "  ",  "WL",  "WL"},
-			{ "WL",   "  ", "  ", "  ", "  ",  "  ",  "WL", "WL",  "  ",  "WL",  "WL"},
-			{ "WL",  "DS3", "WL", "  ", "  ",  "DS2", "WL", "WL",  "  ",  "WL",  "WL"},
-			{ "WL",   "  ", "WL", "  ", "  ",   "  ", "  ", "  ",  "  ",  "  ",  "WL"},
-			{ "WL",   "  ", "WL", "  ", "  ",   "  ", "  ", "  ",  "  ",  "  ",  "WL"},
-			{ "WL",   "  ", "WL", "  ", "  ",   "  ", "  ", "  ",  "  ",  "  ", "WL"},
-			{ "WL",  "SW2", "HO", "HO", "WL",   "SW1", "WL", "HO", "HO", "SW3",  "WL"},
+			{ "EX3",  "  ", "  ", "  ", "  ",   "  ",  "WL", "WL",  "  ",  "  ", "WL"},
+			{ "WL",   "  ", "  ", "  ", "  ",   "  ",  "WL", "WL",  "  ",  "WL", "WL"},
+			{ "WL",   "  ", "  ", "  ", "  ",   "  ",  "WL", "WL",  "  ",  "WL", "WL"},
+			{ "WL",  "DS3", "WL", "  ", "  ",  "RD2",  "WL", "WL",  "  ",  "WL", "WL"},
+			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
+			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
+			{ "WL",   "  ", "WL", "  ", "  ",   "  ",  "  ", "  ",  "  ",  "  ", "WL"},
+			{ "WL",  "SW2", "HO", "HO", "WL",  "SW1",  "WL", "HO", "HO", "SW3",  "WL"},
 			{ "WL",   "  ", "HO", "HO", "WL",   "  ",  "WL", "HO", "HO",  "  ",  "WL"},
 			{ "WL",   "  ", "HO", "HO", "WL",   "  ",  "WL", "HO", "HO",  "  ",  "WL"},
-			{ "WL",   "  ", "WL", "WL", "WL",   "DS1", "WL", "WL", "WL",  "  ",  "WL"},
+			{ "WL",   "  ", "WL", "WL", "WL",   "RD1", "WL", "WL", "WL",  "  ",  "WL"},
 			{ "WL",   "  ", "  ", "  ", "RO",   "RO",  "RO", "  ", "  ",  "  ",  "WL"},
 			{ "WL",   "  ", "  ", "  ", "RO",   "RO",  "RO", "  ", "  ",  "  ",  "WL"},
 			{ "WL",   "  ", "  ", "  ", "RO",   "RO",  "RO", "  ", "  ",  "  ",  "WL"},
@@ -161,12 +161,12 @@ public class LevelLoader : MonoBehaviour
 			{ "WL", "HO",  "  ", "  ", "  ",   "HO",  "HO",   "HO",  "  ",  "  ",  "WL"},
 			{ "WL", "HO",  "  ", "  ", "  ",   "HO",  "HO",   "HO",  "  ",  "  ",  "WL"},
 			{ "WL", "WL",  "WL", "  ", "WL",   "WL",  "WL",   "WL",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "DS2",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "DS2",  "  ",  "  ",  "WL"},
-			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "DS2",  "  ",  "  ",  "WL"},
-			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "DS2",   "  ",  "  ",  "  ",  "WL"},
-			{ "WL", "  ",  "  ", "  ", "  ",  "SW2", "DS2",   "  ",  "SW1", "  ",  "WL"},
-			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "DS2",   "  ",  "  ",  "  ",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
+			{ "WL", "HO",  "  ", "  ", "  ",   "  ",  "  ",  "RD2",  "  ",  "  ",  "WL"},
+			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "RD2",   "  ",  "  ",  "  ",  "WL"},
+			{ "WL", "  ",  "  ", "  ", "  ",  "SW2", "RD2",   "  ",  "SW1", "  ",  "WL"},
+			{ "WL", "  ",  "  ", "  ", "  ",   "  ", "RD2",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "WL",  "WL", "WL", "WL",   "WL",  "WL",  "DS1",  "  ", "DS1",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "RO",   "RO",  "RO",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL", "  ",  "  ", "  ", "RO",   "RO",  "RO",   "  ",  "  ",  "  ",  "WL"},
@@ -176,20 +176,21 @@ public class LevelLoader : MonoBehaviour
 			{ "WL", "DI",  "DI", "DI", "DI",   "DI",  "DI",   "DI",  "DI",  "DI",  "WL"},
 			{ "WL", "WL",  "WL", "WL", "WL",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"}
 		},
+		// Level 10
 		new string[,]
 		{
-			{ "WL", "WL",  "WL", "WL", "WL", "WL",  "EX2",    "WL",  "WL",  "WL",  "WL"},
-			{ "WL",  "  ",   "  ", "  ",  "HO",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
-			{ "EX3", "  ",  "DS4","DS4", "DS4",   "WL",  "  ",   "  ",  "  ",  "  ",  "EX4"},
-			{ "WL",  "  ",   "  ", "  ", "DS4",   "WL",  "  ",   "  ",  "  ",  "DS4",  "WL"},
-			{ "WL",  "  ",   "  ", "  ", "DS4",   "WL",  "  ",   "  ",  "  ",  "HO",  "WL"},
+			{  "WL", "WL",  "WL",  "WL",  "WL",   "WL",  "EX2",  "WL",  "WL",  "WL",  "WL"},
+			{  "WL", "  ",  "  ",  "  ",  "HO",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
+			{ "EX3", "  ",  "RD4","RD4",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ", "EX4"},
+			{ "WL",  "  ",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "DS4", "WL"},
+			{ "WL",  "  ",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "HO",  "WL"},
 			{ "WL",  "  ",   "  ", "  ",  "HO",   "WL",  "  ",   "  ",  "  ",  "HO",  "WL"},
-			{ "WL",  "  ",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ", "WL"},
+			{ "WL",  "  ",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "HO",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "HO",   "  ", "  ",  "  ",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "HO",   "  ",  "  ", "  ",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
-			{ "WL",  "  ",   "  ", "DS2","DS2",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
-			{ "WL",  "  ",   "  ",  "  ", "  ",   "WL", "DS3",  "DS3",  "  ",  "  ",  "WL"},
+			{ "WL",  "  ",   "  ", "RD2","RD2",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
+			{ "WL",  "  ",   "  ",  "  ", "  ",   "WL", "RD3",  "RD3",  "  ",  "  ",  "WL"},
 			{ "WL",  "  ",   "  ",  "  ", "WL",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "  ",   "  ",  "  ", "WL",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "  ",   "  ",  "  ", "WL",   "WL", "SW2",   "  ",  "  ", "SW3",  "WL"},
@@ -197,7 +198,7 @@ public class LevelLoader : MonoBehaviour
 			{ "WL",  "  ",   "  ",  "  ", "WL",   "WL",  "  ",   "  ",  "  ",  "  ",  "WL"},
 			{ "WL",  "  ",   "  ",  "  ", "WL",   "WL",  "  ",  "DS2", "DS2",  "WL",  "WL"},
 			{ "WL", "DS1",  "DS1", "DS1", "WL",   "WL",  "RO",   "RO",  "RO",  "WL",  "WL"},
-			{ "WL", "SW1",  "  ",  "  ", "DS1",  "DS1",  "RO",   "RO",  "RO",  "WL",  "WL"},
+			{ "WL", "SW1",  "  ",  "  ", "RD1",  "RD1",  "RO",   "RO",  "RO",  "WL",  "WL"},
 			{ "WL", "  ",   "  ",  "  ", "DS1",   "WL",  "RO",   "RO",  "RO",  "WL",  "WL"},
 			{ "WL", "  ",   "  ",  "  ", "DS2",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"},
 			{ "WL", "  ",   "  ",  "  ", "DS3",   "WL",  "WL",   "WL",  "WL",  "WL",  "WL"},
@@ -216,6 +217,7 @@ public class LevelLoader : MonoBehaviour
 		public const string Hole			= "HO";
 		public const string Dissolve		= "DI";
 		public const string Door			= "DS";
+		public const string ReverseDoor		= "RD";
 		public const string Switch			= "SW";
 	}
 
@@ -261,7 +263,9 @@ public class LevelLoader : MonoBehaviour
 				// Very bad code, change in future
 				if (	CurrentLevel [i, j].Contains ("EX")
 					||	CurrentLevel [i, j].Contains ("DS")
-					|| 	CurrentLevel [i, j].Contains ("SW")) 
+					|| 	CurrentLevel [i, j].Contains ("SW")
+					|| 	CurrentLevel [i, j].Contains ("RD")
+					) 
 				{
 					string sAmountInString = CurrentLevel [i, j];
 					iNumber = int.Parse (sAmountInString.Remove (0, 2));
@@ -276,15 +280,18 @@ public class LevelLoader : MonoBehaviour
 					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 					goExit.GetComponent<ExitScript> ().SetBotsNeeded ( iNumber );
 						break;
+
 					// Create a wall
 					case InputCode.Wall:
 						Instantiate (Wall, new Vector3(v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 						break;
+
 					// Create both robot and the floor
 					case InputCode.Robot:
 						Instantiate (Robot, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goBotsStorage.transform);
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 						break;
+
 					// Create Dissolving floor as a group
 					case InputCode.Dissolve:
 						if (goCurrentDissolver == null) 
@@ -293,21 +300,33 @@ public class LevelLoader : MonoBehaviour
 						}
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
 						break;
+
 					// Create door
 					case InputCode.Door:
 						var goDoor = Instantiate (Door, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 						goDoor.GetComponent<Door> ().iKey = iNumber;
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 						break;
+
+					// Create Reverse
+					case InputCode.ReverseDoor:
+						var goReverseDoor = Instantiate (Door, new Vector3 (v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						goReverseDoor.GetComponent<Door> ().iKey = iNumber;
+						goReverseDoor.GetComponent<Door> ().bIsReverse = true;
+						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
+						break;
+
 					// Create switch
 					case InputCode.Switch:
 						var goSwitch = Instantiate (Switch, new Vector3 (v3Position.x, 0.5f, v3Position.z), Quaternion.identity, gGrid.transform);
 						goSwitch.GetComponent<Switch> ().iKey = iNumber;
 						Instantiate (Floor, new Vector3(v3Position.x, 0.0f, v3Position.z), Quaternion.identity, gGrid.transform);
 						break;
+
 					// Create hole
 					case InputCode.Hole:
 						break;
+
 					// Create a floor
 					default:
 						Instantiate (Floor, new Vector3(v3Position.x, 0, v3Position.z), Quaternion.identity, gGrid.transform);

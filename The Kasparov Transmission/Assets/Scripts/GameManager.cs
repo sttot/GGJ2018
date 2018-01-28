@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void LevelLose(){
-		Debug.Log ("Game Over");
+//		Debug.Log ("Game Over");
 	}
 
 	GameObject[] Reverse(GameObject[] array)
