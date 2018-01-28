@@ -73,14 +73,14 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void LevelWon()
-	{
-		Debug.Log ("Level Complete");
-	}
-
 	void LevelLose()
 	{
-//		Debug.Log ("Game Over");
+		// Disable level.
+		GameObject.Find( "A*" ).SetActive( false );
+		GameObject.Find( "Bots" ).SetActive( false );
+
+		GameObject goScreenGroup = FindObject( "ScreenContainer","RetryScreen" );
+		goScreenGroup.SetActive( true );
 	}
 
 	GameObject[] Reverse(GameObject[] array)
@@ -96,12 +96,15 @@ public class GameManager : MonoBehaviour {
 
 	void WinGame() 
 	{
+		// Disable level.
+		GameObject.Find("A*").SetActive( false );
+		GameObject.Find("Bots").SetActive( false );
+
 		// Pop up UI
 		int iArrayIndex = (int) GameMaster.instance.activeScene - 1;
 		GameMaster.instance.GameSessionData.LevelsComplete[ iArrayIndex ] = true;
 		GameObject goScreenGroup = FindObject( "ScreenContainer", "WinScreen" );
 		goScreenGroup.SetActive( true );
-
 	}
 
 	GameObject FindObject( string strParentName, string strChildName )
