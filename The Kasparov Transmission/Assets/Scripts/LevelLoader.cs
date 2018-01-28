@@ -227,6 +227,7 @@ public class LevelLoader : MonoBehaviour
 	public GameObject Robot;
 	public GameObject Door;
 	public GameObject Switch;
+	public GameObject Backdrop;
 
 	GameObject goCurrentDissolver;
 
@@ -250,6 +251,8 @@ public class LevelLoader : MonoBehaviour
 		int iColCount = CurrentLevel.GetLength (0);
 		int iRowCount = CurrentLevel.GetLength (1);
 				gGrid.CreateGrid (iColCount, iRowCount);
+
+		Instantiate(Backdrop, new Vector3(0.0f, -50.0f, 40.0f), Quaternion.Euler((new Vector3(45.0f, 0.0f, 0.0f))), gGrid.transform);
 
 		for (int i = 0; i < iColCount; i++)
 		{

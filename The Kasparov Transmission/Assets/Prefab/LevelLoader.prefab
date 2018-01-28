@@ -58,3 +58,4 @@ MonoBehaviour:
   Robot: {fileID: 1391926427378110, guid: ca0ee441aea7c56499e3acd64e57ee18, type: 2}
   Door: {fileID: 1756567079887210, guid: acb915435c70da14a865dd1b4d01f81d, type: 2}
   Switch: {fileID: 1254122554664468, guid: 20a9a2911ccac4e498d72440ebfc8b55, type: 2}
+  Backdrop: {fileID: 1972828832720168, guid: 1bb7785edb5c06c47b0745548202f896, type: 2}

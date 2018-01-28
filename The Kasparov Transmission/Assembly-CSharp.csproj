@@ -72,6 +72,9 @@
      <Compile Include="Assets\Scripts\StartGameOnClick.cs" />
      <Compile Include="Assets\Scripts\Switch.cs" />
      <Compile Include="Assets\Scripts\TileControl.cs" />
+     <None Include="Assets\Shaders\Standard.shader" />
+     <None Include="Assets\Shaders\LinearGradient.shader" />
+     <None Include="Assets\Shaders\Electric.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
