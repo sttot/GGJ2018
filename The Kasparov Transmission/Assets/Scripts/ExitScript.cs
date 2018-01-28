@@ -6,7 +6,7 @@ public class ExitScript : MonoBehaviour {
 
 	int NumberBotsReached = 0;
 	int iNumberOfBotsNeeded;
-
+	public Texture[] textures;
 	// Use this for initialization
 	void Start () 
 	{
@@ -22,11 +22,14 @@ public class ExitScript : MonoBehaviour {
 		} else {
 			NumToDisplay = (iNumberOfBotsNeeded - NumberBotsReached);
 		}
-		if(NumToDisplay==0){
-			gameObject.GetComponent<MeshRenderer> ().materials [0].mainTexture = null;
+		if(NumToDisplay==0)
+		{
+			gameObject.GetComponent<MeshRenderer> ().materials [0].mainTexture = textures [9];
 			iNumberOfBotsNeeded = 0; //This is here so that we do not end with a negative array index if one more
 						//Robot passes through the gate.
-		} else {
+		} 
+		else 
+		{
 			gameObject.GetComponent<MeshRenderer> ().materials [0].mainTexture = textures [NumToDisplay - 1];
 		}
 	}

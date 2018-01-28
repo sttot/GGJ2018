@@ -38,13 +38,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093748463788522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23920027012827154
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -136,3 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f298e67667901f24bbab67f5ef0658e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: aa1eaf09019b7314c8a05a0c2f646bc9, type: 3}
+  - {fileID: 2800000, guid: 74ec6a315cac34a4aa7434cb292b4ea1, type: 3}
+  - {fileID: 2800000, guid: 0bf65a7c97b5e85408afecc35b4843da, type: 3}
+  - {fileID: 2800000, guid: e07a6b849f4fa424591372dc71e43583, type: 3}
+  - {fileID: 2800000, guid: 27d74ed6a39a33645b3506d92a53c47e, type: 3}
+  - {fileID: 2800000, guid: e6da27881d338ac4d8a055a341686479, type: 3}
+  - {fileID: 2800000, guid: 85b43e4fb307e3d4c883164a6ac4807b, type: 3}
+  - {fileID: 2800000, guid: 3695020e35a28fd4aaec9e4b02d2ecf2, type: 3}
+  - {fileID: 2800000, guid: 0f28d7144ac3d184ead65ce6b247570e, type: 3}
+  - {fileID: 2800000, guid: 2e4a9cef2abe4734ea352796482329c5, type: 3}

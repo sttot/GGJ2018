@@ -61,7 +61,7 @@ public class Player_Movement : MonoBehaviour {
 						goBot.transform.rotation = Quaternion.LookRotation (newRotation);
 					}
 				} 
-				else 
+				else
 				{
 					fTurnDuration = 0.7f;
 					isTurning = false;
@@ -69,7 +69,6 @@ public class Player_Movement : MonoBehaviour {
 					{
 						goBot.GetComponent<Animator> ().SetTrigger ("Run");
 					}
-
 				}
 
 				return;
@@ -88,13 +87,7 @@ public class Player_Movement : MonoBehaviour {
 			foreach(var goBot in lgoMovingBots)
 			{
 				goBot.transform.position += fMovementPerFrame * v3MovementDirection;
-				if (fMovementDistance == 1.0f) 
-				{
-					var v3RoundedPosition = goBot.transform.position;
-					v3RoundedPosition.x = Mathf.Round (v3RoundedPosition.x);
-					v3RoundedPosition.z = Mathf.Round (v3RoundedPosition.z);
-					goBot.transform.position = v3RoundedPosition;
-				}
+
 			}
 			if (fMovementDistance == 1.0f)
 			{

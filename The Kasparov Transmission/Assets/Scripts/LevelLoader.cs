@@ -277,7 +277,7 @@ public class LevelLoader : MonoBehaviour
 				{
 					// Create an exit and set its size
 					case InputCode.Exit:
-					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.identity, goCurrentDissolver.transform);
+					GameObject goExit = Instantiate (Exit, new Vector3 (v3Position.x, 1.0f, v3Position.z), Quaternion.Euler(0, 180, 0), goCurrentDissolver.transform);
 						goExit.GetComponent<ExitScript> ().SetBotsNeeded ( iNumber );
 						break;
 
