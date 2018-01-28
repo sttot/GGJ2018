@@ -108,9 +108,12 @@ public class Player_Movement : MonoBehaviour {
 
 			}
 		}
-		if (gameObject.transform.position.y < -30) {
-			Destroy (gameObject);
-		}		
+		
+		foreach(var goBot in lgoMovingBots){
+			if (goBot.transform.position.y < -30) {
+				Destroy (goBot);
+			}
+		}
 	}
 
 	// Check all for direction movement keys and apply the corresponding movement.
