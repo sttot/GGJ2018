@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ExitScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
+     <Compile Include="Assets\Scripts\GIFAnimation.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\GroupMovement.cs" />
      <Compile Include="Assets\Scripts\LevelLoader.cs" />
