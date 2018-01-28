@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4239693332166414}
-  - component: {fileID: 114361944583253570}
+  - component: {fileID: 114521646723058222}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114361944583253570
+--- !u!114 &114521646723058222
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,13 +48,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1971050147142202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2873211d8a271784eb01eaec1cb9861a, type: 3}
+  m_Script: {fileID: 11500000, guid: ea45f7595ed03af429af83738c9df264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Exit: {fileID: 1093748463788522, guid: 8b38a7ae625baef46a7de24e8edad11c, type: 2}
-  Floor: {fileID: 1644186524944758, guid: bf22bc7138737c34dbbea06d7c77252f, type: 2}
-  Dissolver: {fileID: 1311678738327626, guid: 582af438772ad7046943bd2d3e39e44a, type: 2}
-  Wall: {fileID: 1442502252943820, guid: f7587f7b9fdfee248a08b84bd763c7f6, type: 2}
-  Robot: {fileID: 1887406036060844, guid: c4d5bfb9bdf874e48808b9a57576272e, type: 2}
+  Floor: {fileID: 1644186524944758, guid: d9ed4de6dfe45bb46af741b1b936e028, type: 2}
+  Dissolver: {fileID: 1311678738327626, guid: 28c030f22b0b6b244be4688074736b5d, type: 2}
+  Wall: {fileID: 1442502252943820, guid: 9a7c552d017dbdb49bfeb1c85dc00064, type: 2}
+  Robot: {fileID: 1887406036060844, guid: ca0ee441aea7c56499e3acd64e57ee18, type: 2}
   Door: {fileID: 1756567079887210, guid: acb915435c70da14a865dd1b4d01f81d, type: 2}
   Switch: {fileID: 1254122554664468, guid: 20a9a2911ccac4e498d72440ebfc8b55, type: 2}
